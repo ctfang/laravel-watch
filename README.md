@@ -124,7 +124,7 @@ class LoginController
 ~~~~php
 
     /**
-     * @Watch(LoginLogic::class,'infoWatch')
+     * @Watch(LoginLogic::class,"infoWatch")
      */
     public function info(int $id)
     {
