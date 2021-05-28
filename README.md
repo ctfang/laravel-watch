@@ -105,3 +105,36 @@ class LoginController
     }
 }
 ~~~~
+
+# 注意
+
+为了更方便委托，`logic`类必须需要make方式或者`laravel`注入方式实例类
+
+例如一个查看用户`info`的函数需要代理，`controller` 函数需要这样子写,`LoginLogic `需要注入或者`app('LoginLogic')`
+~~~~php
+    public function info(Request $request, LoginLogic $logic)
+    {
+        $userId = $request->input('user_id');
+
+        return ['user' => $logic->info($userId)];
+    }
+~~~~
+`info`的函数代码
+
+~~~~php
+
+    /**
+     * @Watch(LoginLogic::class,'infoWatch')
+     */
+    public function info(int $id)
+    {
+        return [];
+    }
+
+    public function infoWatch(Context $context, \Closure $next)
+    {
+        $id = $context->getInput('id');
+
+        echo "玩家被读取" . $id;
+    }
+~~~~
