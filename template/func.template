@@ -1,0 +1,9 @@
+    {modifier} function {func}({parNameAndType}){return}
+    {
+        $context = new \Ctfang\LaravelWatch\Context({pars});
+        $next    = function (){parNameUse} {
+            return parent::{func}({parName});
+        };
+
+        return \Ctfang\LaravelWatch\WatchService::runWatch($context, $next, {watch});
+    }

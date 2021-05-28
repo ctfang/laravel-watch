@@ -1,0 +1,28 @@
+{
+    "name": "ctfang/laravel-watch",
+    "description": "laravel 业务函数委托执行",
+    "keywords": ["watch", "event", "laravel"],
+    "authors": [
+        {
+            "name": "ctfang",
+            "email": "2206582181@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ctfang\\LaravelWatch\\": "src/",
+            "": "./../../../bootstrap/watch/"
+        }
+    },
+    "require": {
+        "php": "^7.3|^8.0",
+        "doctrine/annotations": "^1.12"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ctfang\\LaravelWatch\\WatchServiceProvider"
+            ]
+        }
+    }
+}
