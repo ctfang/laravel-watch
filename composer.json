@@ -2,6 +2,7 @@
     "name": "ctfang/laravel-watch",
     "description": "laravel 业务函数委托执行",
     "keywords": ["watch", "event", "laravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "ctfang",
